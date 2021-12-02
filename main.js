@@ -18,11 +18,18 @@ document.getElementById('save').addEventListener('click', function(){
         element.remove()
     });
 
+    sortPosts();
     listPosts();
 
 });
 
 
+//https://stackoverflow.com/questions/52287060/how-to-sort-array-by-date-in-javascript
+function sortPosts(){
+    posts.sort(function(a,b){
+        return new Date(a.date) - new Date(b.date)
+      });
+}
 
 
 
@@ -37,5 +44,5 @@ function listPosts(){
         `);
     });
 }
-
+sortPosts();
 listPosts();
